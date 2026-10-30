@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин ФК «Виктория»</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card { transition: transform 0.3s ease; height: 100%; }
+        .product-card:hover { transform: translateY(-5px); }
+        .club-header { background: linear-gradient(135deg, #0a2e0a 0%, #1e5a1e 50%, #2d7a2d 100%); border-bottom: 4px solid #ffd700; }
+        .navbar-custom { background-color: #1a4721 !important; }
+        .card-img-top { height: 180px; object-fit: contain; padding: 10px; background: #f8f9fa; }
+        .price { color: #e3c76c; font-weight: bold; font-size: 1.1em; }
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .btn-group .btn { padding: 0.2rem 0.4rem; font-size: 0.75rem; }
+        .card-title { font-size: 1rem; height: 2.5rem; overflow: hidden; }
+        .card-text { font-size: 0.85rem; height: 3rem; overflow: hidden; }
+        .size-buttons { flex-wrap: wrap; }
+    </style>
+    <meta name="description" content="Клубная форма, атрибутика и товары для болельщиков футбольного клуба «Виктория».">
+    <meta name="keywords" content="ФК Виктория, футбол, футбольный клуб, новости, матчи, состав, болельщики">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nikazippo71-sudo.github.io/shop.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ФК «Виктория»">
+    <meta property="og:title" content="Магазин ФК «Виктория»">
+    <meta property="og:description" content="Клубная форма, атрибутика и товары для болельщиков футбольного клуба «Виктория».">
+    <meta property="og:url" content="https://nikazippo71-sudo.github.io/shop.html">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: linear-gradient(135deg, #0a2e0a 0%, #1e5a1e 50%, #2d7a2d 100%); min-height: 100vh;">
+
+    <!-- ШАПКА -->
+    <header class="club-header text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start">
+                    <a href="index.html" aria-label="ФК Виктория — главная"><img class="club-logo" src="img/fc-viktoria-logo.png" alt="Логотип ФК Виктория"></a>
+                </div>
+                <div class="col-md-9 text-center text-md-start">
+                    <h1 class="h3 font-weight-bold mb-0">ФК "ВИКТОРИЯ"</h1>
+                    <p class="mb-0">Официальный сайт футбольного клуба</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Состав</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matches.html">Матчи</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="login-link">Личный кабинет</a></li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        🛒 Корзина <span class="badge bg-light text-dark" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+            <main id="main-content" class="container my-4">
+      <section class="shop-hero p-4 rounded mb-4"><div class="row align-items-center"><div class="col-md-2 text-center"><img src="img/fc-viktoria-logo.png" alt="Эмблема ФК Виктория" style="max-width:120px;width:100%"></div><div class="col-md-10"><p class="text-uppercase mb-1" style="color:#e3c76c;letter-spacing:.12em">Коллекция 2026/2027</p><h1 class="display-6">Магазин ФК «Виктория»</h1><p class="mb-2">Форма для игры, одежда на каждый день и атрибутика для трибун. Размеры, состав ткани и уход указаны для каждого товара.</p><p class="mb-0"><strong>Доставка:</strong> расчёт при оформлении. <span class="small">Подробности о размерах, материалах и уходе указаны в карточках товаров.</span></p></div></div></section>
+      <div class="alert alert-dark border border-success">Подсказка по размерам: если сомневаетесь между двумя размерами, для спортивной формы выбирайте больший. Стирайте при 30 °C, не используйте отбеливатель и не гладьте принт напрямую.</div>
+      <section class="row g-4" aria-label="Каталог клубной продукции"><div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-jersey-home.jpg" class="merch-img" alt="Домашняя игровая футболка 2026/27 — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Домашняя игровая футболка 2026/27</h2><p class="product-details">100% переработанный полиэстер  145 г/м²; дышащая сетчатая спинка  быстросохнущая ткань.</p><p class="product-details"><strong>Размеры: XS–3XL. Посадка спортивная.</strong></p><label class="small mt-2" for="size-0">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-0"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">4 990 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Домашняя игровая футболка 2026/27" data-price="4990">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-jersey-away.jpg" class="merch-img" alt="Гостевая футболка 2026/27 — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Гостевая футболка 2026/27</h2><p class="product-details">100% полиэстер interlock  150 г/м²; гладкая ткань  устойчивые цвета  машинная стирка 30 °C.</p><p class="product-details"><strong>Размеры: XS–3XL. Посадка стандартная.</strong></p><label class="small mt-2" for="size-1">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-1"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">4 990 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Гостевая футболка 2026/27" data-price="4990">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-training-jacket.jpg" class="merch-img" alt="Тренировочная куртка — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Тренировочная куртка</h2><p class="product-details">Полиэстер 92% / эластан 8%  230 г/м²; эластичные манжеты  молния по всей длине.</p><p class="product-details"><strong>Размеры: S–3XL.</strong></p><label class="small mt-2" for="size-2">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-2"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">6 490 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Тренировочная куртка" data-price="6490">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-hoodie.jpg" class="merch-img" alt="Худи болельщика — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Худи болельщика</h2><p class="product-details">Хлопок 80% / полиэстер 20%  футер 320 г/м²; мягкий начёс внутри  капюшон со шнурком.</p><p class="product-details"><strong>Размеры: XS–3XL. Унисекс.</strong></p><label class="small mt-2" for="size-3">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-3"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">4 590 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Худи болельщика" data-price="4590">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-track-pants.jpg" class="merch-img" alt="Спортивные брюки — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Спортивные брюки</h2><p class="product-details">Полиэстер 100%  трикотаж interlock 220 г/м²; боковые карманы на молнии  пояс на шнурке.</p><p class="product-details"><strong>Размеры: S–3XL.</strong></p><label class="small mt-2" for="size-4">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-4"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">3 790 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Спортивные брюки" data-price="3790">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-scarf.jpg" class="merch-img" alt="Шарф «Виктория» — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Шарф «Виктория»</h2><p class="product-details">Акрил 100%  плотная вязка; мягкий материал  бахрома по краям  двусторонний рисунок.</p><p class="product-details"><strong>Размер: 145 × 18 см.</strong></p><div class="mt-auto"><p class="price mb-2">1 490 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Шарф «Виктория»" data-price="1490">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-cap.jpg" class="merch-img" alt="Кепка с эмблемой — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Кепка с эмблемой</h2><p class="product-details">Хлопок 100%  плотность 260 г/м²; вышитая эмблема  регулируемая застёжка.</p><p class="product-details"><strong>Размер: универсальный  54–60 см.</strong></p><div class="mt-auto"><p class="price mb-2">1 890 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Кепка с эмблемой" data-price="1890">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-backpack.jpg" class="merch-img" alt="Рюкзак команды — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Рюкзак команды</h2><p class="product-details">Полиэстер 600D с водоотталкивающей пропиткой; отделение для обуви  карман для бутылки.</p><p class="product-details"><strong>Размер: 44 × 30 × 18 см  объём около 23 л.</strong></p><div class="mt-auto"><p class="price mb-2">3 990 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Рюкзак команды" data-price="3990">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-socks-shinguards.jpg" class="merch-img" alt="Гетры и щитки — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Гетры и щитки</h2><p class="product-details">Гетры: полиамид/эластан; щитки: лёгкий полипропилен с мягкой EVA-подкладкой.</p><p class="product-details"><strong>Гетры: 35–38  39–42  43–46; щитки: S/M/L.</strong></p><label class="small mt-2" for="size-8">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-8"><option>35–38</option><option>39–42</option><option>43–46</option></select><div class="mt-auto"><p class="price mb-2">2 990 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Гетры и щитки" data-price="2990">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-jersey-home.jpg" class="merch-img" alt="Тренировочная футболка — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Тренировочная футболка</h2><p class="product-details">Полиэстер 100%  140 г/м²; лёгкая ткань для зала и тренировок  плоские швы.</p><p class="product-details"><strong>Размеры: XS–3XL.</strong></p><label class="small mt-2" for="size-9">Размер</label><select class="form-select form-select-sm product-size mb-2" id="size-9"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><div class="mt-auto"><p class="price mb-2">2 790 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Тренировочная футболка" data-price="2790">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-jersey-away.jpg" class="merch-img" alt="Комплект для юных фанатов — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Комплект для юных фанатов</h2><p class="product-details">Полиэстер 100%  145 г/м²; мягкая ткань и свободная посадка для повседневной игры.</p><p class="product-details"><strong>Размеры детские: 116  128  140  152  164.</strong></p><div class="mt-auto"><p class="price mb-2">3 590 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Комплект для юных фанатов" data-price="3590">Добавить в корзину</button></div></div></article></div>
+<div class="col-xl-3 col-lg-4 col-md-6"><article class="card product-card h-100"><img src="img/merch-scarf.jpg" class="merch-img" alt="Набор болельщика: шарф + кепка — клубная продукция ФК Виктория"><div class="card-body d-flex flex-column"><h2 class="h5 card-title">Набор болельщика: шарф + кепка</h2><p class="product-details">Акриловый шарф и хлопковая кепка с клубной символикой; подарочная упаковка.</p><p class="product-details"><strong>Шарф 145 × 18 см; кепка 54–60 см.</strong></p><div class="mt-auto"><p class="price mb-2">2 890 ₽</p><button class="btn btn-success w-100 add-to-cart" data-product="Набор болельщика: шарф + кепка" data-price="2890">Добавить в корзину</button></div></div></article></div></section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ФК "Виктория"</h5>
+                    <p class="mb-1">Футбол объединяет.</p>
+                    <p class="mb-0">Основан в 1995 году</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📞 +7 (495) 123-45-67</p>
+                    <p class="mb-1">✉️ info@fc-viktoria.ru</p>
+                    <p class="mb-0">🏟️ Москва, ул. Спортивная, 1</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Мы в соцсетях</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-outline-light btn-sm">RuTube</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Telegram</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">VK</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Официальный сайт ФК "Виктория" © 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🛒 Ваша корзина</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-empty" class="text-center py-4"><p class="text-muted">Ваша корзина пуста</p></div>
+                    <div id="cart-items" style="display: none;">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead><tr><th>Товар</th><th>Цена</th><th>Кол-во</th><th>Сумма</th><th></th></tr></thead>
+                                <tbody id="cart-items-body"></tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <h5>Итого: <span id="cart-total">0</span> руб.</h5>
+                            <div id="free-shipping" class="alert alert-success py-2 mb-0" style="display: none;"><small>✅ Бесплатная доставка!</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продолжить покупки</button>
+                    <button type="button" class="btn btn-success" id="checkout-btn" style="display: none;">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="back-to-top" class="btn btn-success rounded-circle">↑</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const baseProduct = this.getAttribute('data-product');
+                const sizeSelect = this.closest('.card')?.querySelector('.product-size');
+                const product = sizeSelect ? `${baseProduct} — размер ${sizeSelect.value}` : baseProduct;
+                const price = parseInt(this.getAttribute('data-price'));
+                addToCart(product, price);
+                const originalText = this.innerHTML;
+                this.innerHTML = '✅ Добавлено!';
+                this.classList.remove('btn-success'); this.classList.add('btn-outline-success');
+                setTimeout(() => { this.innerHTML = originalText; this.classList.remove('btn-outline-success'); this.classList.add('btn-success'); }, 2000);
+            });
+        });
+
+        function addToCart(product, price) {
+            const existingItem = cart.find(item => item.product === product);
+            if (existingItem) { existingItem.quantity += 1; } else { cart.push({ product: product, price: price, quantity: 1 }); }
+            updateCart(); saveCartToStorage();
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItems = document.getElementById('cart-items');
+            const cartEmpty = document.getElementById('cart-empty');
+            const cartItemsBody = document.getElementById('cart-items-body');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const freeShipping = document.getElementById('free-shipping');
+            
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalCount;
+            cartItemsBody.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.style.display = 'none'; cartEmpty.style.display = 'block'; checkoutBtn.style.display = 'none';
+            } else {
+                cartItems.style.display = 'block'; cartEmpty.style.display = 'none'; checkoutBtn.style.display = 'block';
+                let totalPrice = 0;
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    totalPrice += itemTotal;
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.product}</td><td>${item.price} руб.</td>
+                        <td><div class="btn-group btn-group-sm"><button class="btn btn-outline-secondary decrease-quantity" data-index="${index}">-</button><span class="btn btn-light">${item.quantity}</span><button class="btn btn-outline-secondary increase-quantity" data-index="${index}">+</button></div></td>
+                        <td>${itemTotal} руб.</td><td><button class="btn btn-danger btn-sm remove-item" data-index="${index}">×</button></td>
+                    `;
+                    cartItemsBody.appendChild(row);
+                });
+                cartTotal.textContent = totalPrice;
+                if (totalPrice >= 5000) { freeShipping.style.display = 'block'; } else { freeShipping.style.display = 'none'; }
+            }
+            addCartEventListeners();
+        }
+
+        function addCartEventListeners() {
+            document.querySelectorAll('.increase-quantity').forEach(btn => {
+                btn.addEventListener('click', function() { cart[parseInt(this.getAttribute('data-index'))].quantity += 1; updateCart(); saveCartToStorage(); });
+            });
+            document.querySelectorAll('.decrease-quantity').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    if (cart[index].quantity > 1) { cart[index].quantity -= 1; } else { cart.splice(index, 1); }
+                    updateCart(); saveCartToStorage();
+                });
+            });
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', function() { cart.splice(parseInt(this.getAttribute('data-index')), 1); updateCart(); saveCartToStorage(); });
+            });
+        }
+
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            if (!isLoggedIn) { alert('Для оформления заказа необходимо войти в систему!'); window.location.href = 'login.html'; return; }
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Заказ оформлен! Спасибо, ${currentUser.firstName}!\nОбщая сумма: ${totalPrice} руб.`);
+            cart = []; updateCart(); saveCartToStorage();
+            const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal')); cartModal.hide();
+        });
+
+        document.querySelectorAll('.btn-group .btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.btn').forEach(b => { b.classList.remove('btn-success'); b.classList.add('btn-outline-success'); });
+                this.classList.remove('btn-outline-success'); this.classList.add('btn-success');
+            });
+        });
+
+        function saveCartToStorage() { localStorage.setItem('cart', JSON.stringify(cart)); }
+        function loadCartFromStorage() { const savedCart = localStorage.getItem('cart'); if (savedCart) { cart = JSON.parse(savedCart); } }
+
+        function checkAuthStatus() {
+            if (isLoggedIn && currentUser) {
+                const loginLink = document.getElementById('login-link');
+                if (loginLink) { loginLink.innerHTML = `👤 ${currentUser.firstName}`; loginLink.href = 'profile.html'; }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() { loadCartFromStorage(); updateCart(); checkAuthStatus(); });
+    </script>
+</body>
+</html>

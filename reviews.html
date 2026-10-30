@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы — ФК «Виктория»</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <style>
+        .club-header { background: linear-gradient(135deg, #1e5a1e 0%, #2d7a2d 100%); border-bottom: 4px solid #ffd700; }
+        .navbar-custom { background: linear-gradient(135deg, #2d7a2d 0%, #1e5a1e 100%); }
+        .captcha-box { background: linear-gradient(45deg, #e8f5e8, #f0fff0); border: 2px solid #28a745; padding: 15px; border-radius: 10px; font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.4em; letter-spacing: 5px; text-align: center; color: #155724; }
+        .review-card { transition: transform 0.3s ease; border-left: 4px solid #28a745; }
+        .review-card:hover { transform: translateY(-2px); }
+        /* Принудительный белый фон для полей ввода */
+        .form-control { background-color: #ffffff !important; color: #000000 !important; }
+    </style>
+    <meta name="description" content="Отзывы болельщиков о футбольном клубе «Виктория» и клубном сервисе.">
+    <meta name="keywords" content="ФК Виктория, футбол, футбольный клуб, новости, матчи, состав, болельщики">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nikazippo71-sudo.github.io/reviews.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ФК «Виктория»">
+    <meta property="og:title" content="Отзывы — ФК «Виктория»">
+    <meta property="og:description" content="Отзывы болельщиков о футбольном клубе «Виктория» и клубном сервисе.">
+    <meta property="og:url" content="https://nikazippo71-sudo.github.io/reviews.html">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: linear-gradient(135deg, #0a2e0a 0%, #1e5a1e 50%, #2d7a2d 100%); min-height: 100vh;">
+
+    <!-- ШАПКА -->
+    <header class="club-header text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-left">
+                    <a href="index.html" aria-label="ФК Виктория — главная"><img class="club-logo" src="img/fc-viktoria-logo.png" alt="Логотип ФК Виктория"></a>
+                </div>
+                <div class="col-md-9 text-center text-md-left">
+                    <div class="display-4 font-weight-bold mb-0">ФК "ВИКТОРИЯ"</div>
+                    <p class="lead mb-0">Официальный сайт футбольного клуба</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Состав</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matches.html">Матчи</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="reviews.html">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="login-nav-link">Личный кабинет</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main id="main-content" class="container my-5">
+<div class="small mb-3" style="color:#d8bd61">Обновлено 30 октября 2026</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron bg-light">
+                    <h1 class="display-4 text-success">💬 Отзывы болельщиков</h1>
+                    <p class="lead">Поделитесь вашими впечатлениями о матчах и командой</p>
+                    <div class="alert alert-info">
+                        <strong>Защита от спама:</strong> Все ссылки автоматически удаляются из сообщений
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-7 mb-4">
+                <h3 class="mb-4 text-success">📝 Последние отзывы</h3>
+                <div id="reviews-list">
+                    <div class="card review-card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title mb-1">Александр</h5>
+                                <small class="text-muted">28.10.2026</small>
+                            </div>
+                            <p class="card-text">Отличная игра против Динамо! Петров просто молодец с хет-триком! Настоящий лидер команды.</p>
+                            <div class="rating"><span class="badge badge-success">⭐ 5/5</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card review-card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title mb-1">Мария</h5>
+                                <small class="text-muted">18.10.2026</small>
+                            </div>
+                            <p class="card-text">Очень понравилась атмосфера на стадионе. Персонал вежливый, все организовано на высшем уровне. Ждем следующий матч!</p>
+                            <div class="rating"><span class="badge badge-success">⭐ 5/5</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card review-card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title mb-1">Сергей</h5>
+                                <small class="text-muted">15.10.2026</small>
+                            </div>
+                            <p class="card-text">Хорошая игра, но нужно улучшить оборону. Во втором тайме были моменты, когда пропускали слишком много.</p>
+                            <div class="rating"><span class="badge badge-warning">⭐ 4/5</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">✍️ Добавить отзыв</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="reviewForm">
+                            <div class="form-group">
+                                <label for="userName" class="font-weight-bold">Ваше имя *</label>
+                                <input type="text" class="form-control" id="userName" required placeholder="Как к вам обращаться?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userEmail" class="font-weight-bold">Email</label>
+                                <input type="email" class="form-control" id="userEmail" placeholder="example@mail.ru">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userRating" class="font-weight-bold">Оценка *</label>
+                                <select class="form-control" id="userRating" required>
+                                    <option value="">Выберите оценку</option>
+                                    <option value="5">⭐ ⭐ ⭐ ⭐ ⭐ - Отлично</option>
+                                    <option value="4">⭐ ⭐ ⭐ ⭐ - Хорошо</option>
+                                    <option value="3">⭐ ⭐ ⭐ - Удовлетворительно</option>
+                                    <option value="2">⭐ ⭐ - Плохо</option>
+                                    <option value="1">⭐ - Очень плохо</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviewText" class="font-weight-bold">Ваш отзыв *</label>
+                                <textarea class="form-control" id="reviewText" rows="4" required placeholder="Поделитесь вашими впечатлениями о матче, команде или стадионе..."></textarea>
+                                <small class="form-text text-muted">🔒 Ссылки и URL-адреса будут автоматически удалены для безопасности</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="font-weight-bold">Подтвердите, что вы не робот:</label>
+                                <div class="captcha-box mb-2" id="captchaDisplay"></div>
+                                <input type="text" class="form-control" id="captchaInput" placeholder="Введите код с картинки выше" required>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <small class="text-muted">Введите код без пробелов</small>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" id="refreshCaptcha">🔄 Новый код</button>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success btn-lg btn-block">📨 Отправить отзыв</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ФК "Виктория"</h5>
+                    <p class="mb-1">Футбол объединяет.</p>
+                    <p class="mb-0">Основан в 1995 году</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📞 +7 (495) 123-45-67</p>
+                    <p class="mb-1">✉️ info@fc-viktoria.ru</p>
+                    <p class="mb-0">🏟️ Москва, ул. Спортивная, 1</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Мы в соцсетях</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-outline-light btn-sm">RuTube</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Telegram</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">VK</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Официальный сайт ФК "Виктория" © 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="btn btn-success rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">↑</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        let currentCaptcha = '';
+        
+        function generateCaptcha() {
+            const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) { captcha += characters.charAt(Math.floor(Math.random() * characters.length)); }
+            currentCaptcha = captcha;
+            $('#captchaDisplay').text(captcha);
+        }
+        
+        function removeLinks(text) {
+            const originalText = text;
+            text = text.replace(/(https?:\/\/[^\s]+)/g, '[ссылка удалена]');
+            text = text.replace(/(www\.[^\s]+)/g, '[сайт удален]');
+            text = text.replace(/([a-zA-Z0-9-]+\.(com|ru|org|net|info))/g, '[домен удален]');
+            return text;
+        }
+        
+        function isStrongPassword(text) {
+            const spamPatterns = [ /[A-Z]{5,}/, /[0-9]{10,}/, /(.)\1{5,}/ ];
+            return !spamPatterns.some(pattern => pattern.test(text));
+        }
+        
+        generateCaptcha();
+        
+        $('#refreshCaptcha').click(function() { generateCaptcha(); $('#captchaInput').val('').focus(); });
+        
+        $('#reviewForm').submit(function(e) {
+            e.preventDefault();
+            const userName = $('#userName').val().trim();
+            const userEmail = $('#userEmail').val().trim();
+            const userRating = $('#userRating').val();
+            let reviewText = $('#reviewText').val().trim();
+            const captchaInput = $('#captchaInput').val().trim();
+            
+            if (captchaInput !== currentCaptcha) { alert('❌ Неверный код подтверждения!'); generateCaptcha(); $('#captchaInput').val('').focus(); return; }
+            if (!userName || !userRating || !reviewText) { alert('❌ Пожалуйста, заполните все обязательные поля!'); return; }
+            if (!isStrongPassword(reviewText)) { alert('⚠️ Текст содержит подозрительные паттерны.'); return; }
+            
+            const cleanReviewText = removeLinks(reviewText);
+            if (cleanReviewText !== reviewText) { alert('🔒 Внимание: все ссылки были удалены.'); }
+            
+            const reviewHTML = `
+                <div class="card review-card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title mb-1">${userName}</h5>
+                            <small class="text-muted">${new Date().toLocaleDateString('ru-RU')}</small>
+                        </div>
+                        <p class="card-text">${cleanReviewText}</p>
+                        <div class="rating"><span class="badge badge-${userRating >= 4 ? 'success' : userRating >= 3 ? 'warning' : 'danger'}">⭐ ${userRating}/5</span></div>
+                    </div>
+                </div>
+            `;
+            
+            $('#reviews-list').prepend(reviewHTML);
+            $('html, body').animate({ scrollTop: 0 }, 500);
+            $('#reviewForm')[0].reset();
+            generateCaptcha();
+            alert('✅ Спасибо за ваш отзыв!');
+        });
+        
+        $('#back-to-top').click(function(e) { e.preventDefault(); $('html, body').animate({scrollTop: 0}, 500); });
+    });
+    </script>
+</body>
+</html>

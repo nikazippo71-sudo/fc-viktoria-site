@@ -1,0 +1,396 @@
+/* ============================================
+   ФК "ВИКТОРИЯ" — единая тема
+   Тёмно-зелёная палитра + золотой акцент
+   ============================================ */
+
+:root {
+  --bg-dark:        #0a1a0a;
+  --bg-panel:       #102510;
+  --bg-card:        #142e14;
+  --bg-card-hover:  #1a3a1a;
+  --border:         #244524;
+  --accent:         #ffd700;
+  --accent-hover:   #ffe94d;
+  --accent-dark:    #b89b00;
+  --text:           #e8f5e8;
+  --text-muted:     #8aa88a;
+  --success:        #2ecc71;
+  --warning:        #f39c12;
+  --danger:         #e74c3c;
+  --radius:         12px;
+  --radius-sm:      8px;
+  --shadow:         0 4px 20px rgba(0,0,0,.45);
+  --transition:     .25s ease;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+p {
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 .75rem;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent-hover); }
+
+/* ---------- ШАПКА ---------- */
+.club-header {
+  background: linear-gradient(135deg, #0a1a0a 0%, #1a3a1a 100%);
+  border-bottom: 3px solid var(--accent);
+  padding: 1.5rem 0;
+}
+.club-header .display-4 {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin: 0;
+  text-transform: uppercase;
+}
+.club-header .lead {
+  color: var(--text-muted);
+  font-size: .95rem;
+  margin: 0;
+}
+
+/* ---------- НАВИГАЦИЯ ---------- */
+.navbar-custom {
+  background: rgba(10, 26, 10, .96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: .5rem 0;
+  z-index: 1030;
+}
+.navbar-custom .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: .82rem;
+  letter-spacing: .5px;
+  padding: .6rem .9rem !important;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: var(--accent) !important;
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- КНОПКИ ---------- */
+.btn-accent {
+  background: var(--accent);
+  color: #0a1a0a;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: .55rem 1.3rem;
+  transition: all var(--transition);
+}
+.btn-accent:hover {
+  background: var(--accent-hover);
+  color: #0a1a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,215,0,.35);
+}
+.btn-outline-accent {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+.btn-outline-accent:hover {
+  background: var(--accent);
+  color: #0a1a0a;
+}
+
+/* ---------- КАРТОЧКИ ---------- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+.card-header { border-bottom: 1px solid var(--border); }
+.card-title { color: var(--text) !important; }
+.card-text  { color: var(--text-muted) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* ---------- КАРТОЧКА МАТЧА ---------- */
+.match-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+.match-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.match-card .match-date {
+  font-size: .78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.match-card .team-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+}
+.match-card .score {
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: .25rem .9rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+.match-card .score-win      { background: rgba(46,204,113,.18); color: var(--success); }
+.match-card .score-upcoming { background: rgba(255,215,0,.12);  color: var(--accent); }
+.match-card .score-lose     { background: rgba(231,76,60,.18);  color: var(--danger); }
+
+/* ---------- БЕЙДЖИ ---------- */
+.badge { font-weight: 600; letter-spacing: .3px; }
+.badge-accent { background: var(--accent); color: #0a1a0a; }
+
+/* ---------- СТАТИСТИКА ---------- */
+.stat-card {
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  color: #0a1a0a;
+  font-weight: 700;
+}
+.stat-card h3 { font-size: 2.2rem; margin: 0; color: inherit; }
+.stat-card p  { margin: 0; color: inherit; opacity: .85; }
+.stat-win    { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.stat-draw   { background: linear-gradient(135deg, #ffd700, #f39c12); }
+.stat-lose   { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.stat-points { background: linear-gradient(135deg, #3498db, #2980b9); }
+
+/* ---------- JUMBOTRON ---------- */
+.jumbotron {
+  background: linear-gradient(135deg, var(--bg-panel) 0%, var(--bg-card) 100%) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+.jumbotron h1, .jumbotron .display-4 { color: var(--accent) !important; }
+.jumbotron .lead { color: var(--text-muted); }
+
+/* ---------- ФУТЕР ---------- */
+footer.bg-dark {
+  background: #050d05 !important;
+  color: var(--text) !important;
+  border-top: 2px solid var(--accent);
+  padding: 2.5rem 0 1.5rem !important;
+  margin-top: 3rem;
+}
+footer.bg-dark h5 { color: var(--accent) !important; font-size: 1rem; margin-bottom: .9rem; }
+footer.bg-dark p  { color: var(--text-muted) !important; font-size: .9rem; margin: 2px 0; }
+footer.bg-dark a  { color: var(--text-muted) !important; }
+footer.bg-dark a:hover { color: var(--accent) !important; }
+footer.bg-dark .btn-outline-light {
+  border-color: var(--border) !important;
+  color: var(--text-muted) !important;
+  font-size: .8rem;
+}
+footer.bg-dark .btn-outline-light:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #0a1a0a !important;
+}
+footer.bg-dark hr { border-color: var(--border) !important; }
+
+/* ---------- SWIPER ---------- */
+.swiper { padding: 1rem .25rem 2.5rem; }
+.swiper-slide { height: auto; }
+.swiper-pagination-bullet { background: var(--text-muted); opacity: .5; }
+.swiper-pagination-bullet-active { background: var(--accent); opacity: 1; }
+.swiper-button-next, .swiper-button-prev { color: var(--accent); }
+
+/* ---------- BACK TO TOP ---------- */
+#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0a1a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition);
+}
+#back-to-top.visible { opacity: 1; pointer-events: auto; }
+#back-to-top:hover { background: var(--accent-hover); transform: translateY(-3px); }
+
+/* ---------- ФОРМЫ ---------- */
+.form-control {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .2rem rgba(255,215,0,.25);
+}
+label { color: var(--text); font-weight: 600; }
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 991px) {
+  .match-card .score { font-size: 1.2rem; padding: .2rem .6rem; }
+  .stat-card h3 { font-size: 1.6rem; }
+}
+@media (max-width: 575px) {
+  .club-header .display-4 { font-size: 1.4rem; letter-spacing: 1px; }
+  .navbar-custom .nav-link { font-size: .75rem; padding: .5rem .6rem !important; }
+}
+
+/* Кастомные стили для страниц */
+.hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
+@media (max-width:575.98px){ .hero-actions .btn { width:100%; } }
+.section-head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1rem; padding-bottom:.5rem; border-bottom:2px solid var(--border); }
+.captcha-box { background: linear-gradient(45deg, #e8f5e8, #f0fff0); border: 2px solid var(--accent); padding: 15px; border-radius: 10px; font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.4em; letter-spacing: 5px; text-align: center; color: #0a1a0a; }
+.review-card { border-left: 4px solid var(--accent); transition: transform 0.3s ease; }
+.review-card:hover { transform: translateY(-2px); }
+.product-card { transition: transform 0.3s ease; height: 100%; }
+.product-card:hover { transform: translateY(-5px); }
+.card-img-top { height: 180px; object-fit: contain; padding: 10px; background: #f8f9fa; }
+.price { color: var(--accent); font-weight: bold; font-size: 1.1em; }
+.size-buttons { flex-wrap: wrap; }
+.player-card { transition: transform 0.3s ease; cursor: pointer; }
+.player-card:hover { transform: translateY(-5px); }
+.staff { border-left: 4px solid #333; }
+.gk { border-left: 4px solid #ff9900; }
+.df { border-left: 4px solid #006400; }
+.mf { border-left: 4px solid #0000ff; }
+.fw { border-left: 4px solid #ff0000; }
+.player-stats { font-size: 0.9em; }
+.stats-bar { height: 6px; margin-bottom: 5px; }
+.player-card.dragging { cursor: grabbing !important; }
+.ticket-card { transition: transform 0.3s ease; border-left: 4px solid var(--accent); }
+.ticket-card:hover { transform: translateY(-3px); }
+.stadium-map { background: var(--bg-panel); border-radius: 10px; padding: 20px; }
+.sector { border: 2px solid var(--border); border-radius: 5px; padding: 10px; margin: 5px; cursor: pointer; transition: all 0.3s ease; }
+.sector:hover { background-color: var(--bg-card-hover); }
+.sector.selected { background-color: var(--success); color: white; border-color: var(--success); }
+
+/* =========================================================
+   CONTRAST + RESPONSIVE POLISH — preserve original dark theme
+   ========================================================= */
+:root{
+  --bg-dark:#071407;
+  --bg-panel:#102510;
+  --bg-card:#142e14;
+  --bg-card-hover:#1b3d1b;
+  --border:#315531;
+  --accent:#ffd700;
+  --accent-hover:#fff06a;
+  --text:#f4fff4;
+  --text-muted:#c3d8c3;
+  --shadow:0 8px 26px rgba(0,0,0,.36);
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body,html{background-color:var(--bg-dark);color:var(--text);min-height:100%;-webkit-font-smoothing:antialiased}
+body{line-height:1.65}
+p,li,dd,dt,figcaption,label,legend,small,.small,.lead,.form-text,.card-text,.text-muted,.text-secondary{color:var(--text-muted)}
+h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4,.card-title{color:var(--text)!important}
+strong,b,th{color:var(--text)}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover,a:focus{color:var(--accent-hover)}
+::selection{background:var(--accent);color:#071407}
+.club-header{background:linear-gradient(125deg,#071407 0%,#103819 58%,#1a4725 100%);border-bottom:3px solid var(--accent)}
+.club-header .lead{color:#d6e8d6!important}
+.navbar-custom{background:rgba(7,20,7,.98)!important;border-bottom:1px solid #315531;box-shadow:0 5px 18px rgba(0,0,0,.2)}
+.navbar-custom .nav-link{color:#d7e7d7!important}
+.navbar-custom .nav-link:hover,.navbar-custom .nav-link.active{color:var(--accent)!important}
+.navbar-toggler{border-color:#769076!important}
+.navbar-toggler:focus{outline:2px solid var(--accent);outline-offset:2px}
+.jumbotron,.card,.modal-content,.dropdown-menu,.list-group-item,.accordion,.accordion-item,.table,.popover,.toast{
+ background-color:var(--bg-panel)!important;color:var(--text)!important;border-color:var(--border)!important
+}
+.jumbotron p,.card p,.card li,.card label,.card .card-text,.modal-content p,.modal-content label,.list-group-item,.dropdown-item{color:var(--text-muted)!important}
+.card-header,.card-footer{background:#183518!important;color:var(--text)!important;border-color:var(--border)!important}
+.card:hover{border-color:#587c35!important}
+hr{border-color:var(--border)!important;opacity:1}
+.table{--bs-table-color:var(--text);--bs-table-bg:var(--bg-panel);--bs-table-border-color:var(--border)}
+.table th,.table td{color:var(--text)!important;border-color:var(--border)!important}
+.table thead th{background:#1a3b1a!important}
+.badge,.badge-secondary,.badge-dark,.badge-light{color:#071407!important}
+.btn-accent,.btn-warning{background:var(--accent)!important;border-color:var(--accent)!important;color:#071407!important;font-weight:800}
+.btn-accent:hover,.btn-warning:hover{background:var(--accent-hover)!important;border-color:var(--accent-hover)!important;color:#071407!important}
+.btn-outline-accent{background:transparent!important;color:var(--accent)!important;border:2px solid var(--accent)!important}
+.btn-outline-accent:hover{background:var(--accent)!important;color:#071407!important}
+.btn-outline-secondary,.btn-outline-light{color:var(--text)!important;border-color:#8aa58a!important}
+.btn-outline-secondary:hover,.btn-outline-light:hover{background:#d8e7d8!important;color:#071407!important}
+.btn-success,.btn-primary{color:#fff!important}
+.form-control,select,textarea,input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"]{
+ background:#fff!important;color:#111!important;border:1px solid #a8b6a8!important;border-radius:8px
+}
+.form-control::placeholder,input::placeholder,textarea::placeholder{color:#454b45!important;opacity:1}
+.form-control:focus,select:focus,textarea:focus,input:focus{border-color:#d5b400!important;box-shadow:0 0 0 .2rem rgba(255,215,0,.22)!important;outline:0}
+label,.custom-control-label{color:var(--text)!important}
+input[type=checkbox],input[type=radio]{accent-color:#d2b000}
+.text-white{color:#f7fff7!important}
+.text-light{color:#edf7ed!important}
+.text-muted,.text-secondary,.text-body-secondary{color:#c3d8c3!important}
+.bg-light,.bg-white{background:#f4f7f2!important;color:#111!important}
+.bg-light *, .bg-white *{color:#111!important}
+.bg-dark{background:#0b1b0b!important;color:#f4fff4!important}
+.bg-dark *{color:#f4fff4!important}
+.player-card{cursor:default!important;user-select:text}
+.player-card:hover{transform:translateY(-3px);transition:box-shadow .2s ease,transform .2s ease}
+#back-to-top{box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.skip-link{position:absolute;left:-9999px;top:10px;z-index:2000;background:#fff;color:#000;padding:10px 14px;border-radius:6px}
+.skip-link:focus{left:10px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;height:auto}
+@media(max-width:767.98px){
+ .club-header{padding:1.2rem 0}
+ .navbar-custom .nav-link{padding:.7rem .9rem!important}
+ main.container{margin-top:1.5rem!important;margin-bottom:1.5rem!important}
+ .display-4{font-size:clamp(1.8rem,7vw,2.5rem)}
+ .table-responsive{border:1px solid var(--border);border-radius:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+/* Единый клубный фон на всех страницах: глубокий зелёный градиент с мягким свечением */
+html,body{background:#071407!important}
+body{background:linear-gradient(135deg,#071407 0%,#0d2610 42%,#102f17 72%,#071407 100%) fixed!important}

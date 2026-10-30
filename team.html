@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Состав команды — ФК «Виктория»</title>
+    
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+    <style>
+        .club-header { background: linear-gradient(135deg, #1e5a1e 0%, #2d7a2d 100%); border-bottom: 4px solid #ffd700; }
+        .navbar-custom { background: linear-gradient(135deg, #2d7a2d 0%, #1e5a1e 100%); }
+        .player-card { transition: transform 0.3s ease;  }
+        .player-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+        .staff { border-left: 4px solid #333; }
+        .gk { border-left: 4px solid #ff9900; }
+        .df { border-left: 4px solid #006400; }
+        .mf { border-left: 4px solid #0000ff; }
+        .fw { border-left: 4px solid #ff0000; }
+        .player-stats { font-size: 0.9em; }
+        .stats-bar { height: 6px; margin-bottom: 5px; }
+        /* Принудительный белый фон для полей */
+        .form-control { background-color: #ffffff !important; color: #000000 !important; }
+    </style>
+    <meta name="description" content="Игроки основного состава, тренерский штаб и статистика футболистов ФК «Виктория».">
+    <meta name="keywords" content="ФК Виктория, футбол, футбольный клуб, новости, матчи, состав, болельщики">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nikazippo71-sudo.github.io/team.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ФК «Виктория»">
+    <meta property="og:title" content="Состав команды — ФК «Виктория»">
+    <meta property="og:description" content="Игроки основного состава, тренерский штаб и статистика футболистов ФК «Виктория».">
+    <meta property="og:url" content="https://nikazippo71-sudo.github.io/team.html">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: linear-gradient(135deg, #0a2e0a 0%, #1e5a1e 50%, #2d7a2d 100%); min-height: 100vh;">
+    <!-- ШАПКА -->
+    <header class="club-header text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-left">
+                    <a href="index.html" aria-label="ФК Виктория — главная"><img class="club-logo" src="img/fc-viktoria-logo.png" alt="Логотип ФК Виктория"></a>
+                </div>
+                <div class="col-md-9 text-center text-md-left">
+                    <div class="display-4 font-weight-bold mb-0">ФК "ВИКТОРИЯ"</div>
+                    <p class="lead mb-0">Официальный сайт футбольного клуба</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="team.html">Состав</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matches.html">Матчи</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="login-nav-link">Личный кабинет</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main id="main-content" class="container my-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="jumbotron bg-light">
+                    <h1 class="display-4 text-success">Женский состав команды</h1>
+                    <p class="lead">Наши спортсменки - гордость клуба и пример для подражания!</p>
+                    <button class="btn btn-outline-primary" id="compare-players">🔍 Сравнить игроков</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ФИЛЬТРЫ И ПОИСК -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="player-search" placeholder="🔍 Поиск игрока...">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control" id="position-filter">
+                                    <option value="all">Все позиции</option>
+                                    <option value="gk">Вратари</option>
+                                    <option value="df">Защитники</option>
+                                    <option value="mf">Полузащитники</option>
+                                    <option value="fw">Нападающие</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТРЕНЕРСКИЙ ШТАБ -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 border-bottom pb-2 text-white">👩‍💼 Тренерский штаб</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card staff player-card h-100" data-toggle="modal" data-target="#coach1Modal">
+                            <img src="img/coach_ivanova.jpg" class="card-img-top" alt="Елена Иванова" style="height: 250px; object-fit: cover;" title="Елена Иванова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Елена Иванова. Портрет для знакомства с составом ФК «Виктория».</small>
+                            <div class="card-body">
+                                <h5 class="card-title">Елена Иванова</h5>
+                                <p class="card-text">Главный тренер</p>
+                                <small class="text-muted">В команде с 2020 года</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card staff player-card h-100" data-toggle="modal" data-target="#coach2Modal">
+                            <img src="img/coach_petrova.jpg" class="card-img-top" alt="Анна Петрова" style="height: 250px; object-fit: cover;" title="Анна Петрова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Анна Петрова. Портрет для знакомства с составом ФК «Виктория».</small>
+                            <div class="card-body">
+                                <h5 class="card-title">Анна Петрова</h5>
+                                <p class="card-text">Тренер вратарей</p>
+                                <small class="text-muted">В команде с 2018 года</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card staff player-card h-100" data-toggle="modal" data-target="#coach3Modal">
+                            <img src="img/coach_sidorova.jpg" class="card-img-top" alt="Мария Сидорова" style="height: 250px; object-fit: cover;" title="Мария Сидорова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Мария Сидорова. Портрет для знакомства с составом ФК «Виктория».</small>
+                            <div class="card-body">
+                                <h5 class="card-title">Мария Сидорова</h5>
+                                <p class="card-text">Ассистент тренера</p>
+                                <small class="text-muted">В команде с 2021 года</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ВРАТАРИ -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 border-bottom pb-2 text-white">🧤 Вратари</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card gk player-card h-100" data-toggle="modal" data-target="#player1Modal">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="img/player_1.jpg" class="img-fluid rounded" alt="Анна Соколова" title="Анна Соколова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Анна Соколова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title">Анна Соколова</h5>
+                                        <p class="card-text">№1 - Вратарь</p>
+                                        <p class="card-text"><small class="text-muted">28 лет • 178 см</small></p>
+                                        <span class="badge badge-warning">Основной состав</span>
+                                        <div class="player-stats mt-2">
+                                            <div class="d-flex justify-content-between"><small>Реакция</small><small>92%</small></div>
+                                            <div class="progress stats-bar"><div class="progress-bar bg-success" style="width: 92%"></div></div>
+                                            <div class="d-flex justify-content-between"><small>Игра на выходах</small><small>85%</small></div>
+                                            <div class="progress stats-bar"><div class="progress-bar bg-info" style="width: 85%"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card gk player-card h-100" data-toggle="modal" data-target="#player12Modal">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="img/player_12.jpg" class="img-fluid rounded" alt="Дарья Попова" title="Дарья Попова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Дарья Попова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                    </div>
+                                    <div class="col-8">
+                                        <h5 class="card-title">Дарья Попова</h5>
+                                        <p class="card-text">№12 - Вратарь</p>
+                                        <p class="card-text"><small class="text-muted">25 лет • 175 см</small></p>
+                                        <span class="badge badge-info">Запасной</span>
+                                        <div class="player-stats mt-2">
+                                            <div class="d-flex justify-content-between"><small>Реакция</small><small>78%</small></div>
+                                            <div class="progress stats-bar"><div class="progress-bar bg-success" style="width: 78%"></div></div>
+                                            <div class="d-flex justify-content-between"><small>Игра на выходах</small><small>82%</small></div>
+                                            <div class="progress stats-bar"><div class="progress-bar bg-info" style="width: 82%"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ЗАЩИТНИКИ -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 border-bottom pb-2 text-white">🛡️ Защитники</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card df player-card h-100" data-toggle="modal" data-target="#player2Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_2.jpg" class="img-fluid rounded-circle mb-3" alt="Екатерина Васильева" style="width: 100px; height: 100px; object-fit: cover;" title="Екатерина Васильева — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Екатерина Васильева. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Екатерина Васильева</h5>
+                                <p class="card-text">№2 - Правый защитник</p>
+                                <span class="badge badge-primary">26 лет</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Отбор</small><small>88%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-danger" style="width: 88%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card df player-card h-100" data-toggle="modal" data-target="#player3Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_3.jpg" class="img-fluid rounded-circle mb-3" alt="Ольга Орлова" style="width: 100px; height: 100px; object-fit: cover;" title="Ольга Орлова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Ольга Орлова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Ольга Орлова</h5>
+                                <p class="card-text">№3 - Центральный защитник</p>
+                                <span class="badge badge-primary">29 лет</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Сила</small><small>94%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-warning" style="width: 94%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card df player-card h-100" data-toggle="modal" data-target="#player4Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_4.jpg" class="img-fluid rounded-circle mb-3" alt="Александра Новикова" style="width: 100px; height: 100px; object-fit: cover;" title="Александра Новикова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Александра Новикова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Александра Новикова</h5>
+                                <p class="card-text">№4 - Центральный защитник</p>
+                                <span class="badge badge-success">Вице-капитан</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Лидерство</small><small>96%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-info" style="width: 96%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card df player-card h-100" data-toggle="modal" data-target="#player5Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_5.jpg" class="img-fluid rounded-circle mb-3" alt="Кристина Морозова" style="width: 100px; height: 100px; object-fit: cover;" title="Кристина Морозова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Кристина Морозова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Кристина Морозова</h5>
+                                <p class="card-text">№5 - Левый защитник</p>
+                                <span class="badge badge-primary">24 года</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Скорость</small><small>89%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-success" style="width: 89%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ПОЛУЗАЩИТНИКИ -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 border-bottom pb-2 text-white">⚡ Полузащитники</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card mf player-card h-100" data-toggle="modal" data-target="#player6Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_6.jpg" class="img-fluid rounded-circle mb-3" alt="Алина Семёнова" style="width: 100px; height: 100px; object-fit: cover;" title="Алина Семёнова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Алина Семёнова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Алина Семёнова</h5>
+                                <p class="card-text">№6 - Центральный полузащитник</p>
+                                <span class="badge badge-danger">Капитан</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Видение поля</small><small>95%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-primary" style="width: 95%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card mf player-card h-100" data-toggle="modal" data-target="#player7Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_7.jpg" class="img-fluid rounded-circle mb-3" alt="Ирина Ковалёва" style="width: 100px; height: 100px; object-fit: cover;" title="Ирина Ковалёва — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Ирина Ковалёва. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Ирина Ковалёва</h5>
+                                <p class="card-text">№7 - Правый полузащитник</p>
+                                <span class="badge badge-primary">27 лет</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Дриблинг</small><small>87%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-success" style="width: 87%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card mf player-card h-100" data-toggle="modal" data-target="#player8Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_8.jpg" class="img-fluid rounded-circle mb-3" alt="Наталья Фёдорова" style="width: 100px; height: 100px; object-fit: cover;" title="Наталья Фёдорова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Наталья Фёдорова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Наталья Фёдорова</h5>
+                                <p class="card-text">№8 - Опорный полузащитник</p>
+                                <span class="badge badge-primary">26 лет</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Выносливость</small><small>91%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-warning" style="width: 91%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card mf player-card h-100" data-toggle="modal" data-target="#player10Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_10.jpg" class="img-fluid rounded-circle mb-3" alt="Анжела Павлова" style="width: 100px; height: 100px; object-fit: cover;" title="Анжела Павлова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Анжела Павлова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Анжела Павлова</h5>
+                                <p class="card-text">№10 - Атакующий полузащитник</p>
+                                <span class="badge badge-warning">Плеймейкер</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Креативность</small><small>93%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-info" style="width: 93%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- НАПАДАЮЩИЕ -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4 border-bottom pb-2 text-white">🎯 Нападающие</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card fw player-card h-100" data-toggle="modal" data-target="#player9Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_9.jpg" class="img-fluid rounded-circle mb-3" alt="Вероника Петрова" style="width: 100px; height: 100px; object-fit: cover;" title="Вероника Петрова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Вероника Петрова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Вероника Петрова</h5>
+                                <p class="card-text">№9 - Центральный нападающий</p>
+                                <span class="badge badge-success">Лучший бомбардир</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Удар</small><small>96%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-danger" style="width: 96%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card fw player-card h-100" data-toggle="modal" data-target="#player11Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_11.jpg" class="img-fluid rounded-circle mb-3" alt="Рената Жукова" style="width: 100px; height: 100px; object-fit: cover;" title="Рената Жукова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Рената Жукова. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Рената Жукова</h5>
+                                <p class="card-text">№11 - Крайний нападающий</p>
+                                <span class="badge badge-primary">29 лет</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Скорость</small><small>94%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-success" style="width: 94%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card fw player-card h-100" data-toggle="modal" data-target="#player19Modal">
+                            <div class="card-body text-center">
+                                <img src="img/player_19.jpg" class="img-fluid rounded-circle mb-3" alt="Евгения Дмитриева" style="width: 100px; height: 100px; object-fit: cover;" title="Евгения Дмитриева — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Евгения Дмитриева. Портрет для знакомства с составом ФК «Виктория».</small>
+                                <h5 class="card-title">Евгения Дмитриева</h5>
+                                <p class="card-text">№19 - Нападающий</p>
+                                <span class="badge badge-info">Молодой игрок</span>
+                                <div class="player-stats mt-2">
+                                    <div class="d-flex justify-content-between"><small>Потенциал</small><small>88%</small></div>
+                                    <div class="progress stats-bar"><div class="progress-bar bg-warning" style="width: 88%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- МОДАЛЬНЫЕ ОКНА ДЛЯ ИГРОКОВ -->
+    <div class="modal fade" id="coach1Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Елена Иванова</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4"><img src="img/coach_ivanova.jpg" class="img-fluid rounded" alt="Елена Иванова" title="Елена Иванова — фото и карточка состава ФК Виктория"><small class="player-photo-caption">Фото игрока: Елена Иванова. Портрет для знакомства с составом ФК «Виктория».</small></div>
+                        <div class="col-md-8">
+                            <h6>Главный тренер</h6>
+                            <p><strong>Возраст:</strong> 45 лет</p>
+                            <p><strong>В команде с:</strong> 2020 года</p>
+                            <p><strong>Достижения:</strong> Опытный специалист, бывшая игрок сборной России. Привела команду к победе в Кубке России 2022 года.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ФК "Виктория"</h5>
+                    <p class="mb-1">Футбол объединяет.</p>
+                    <p class="mb-0">Основан в 1995 году</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📞 +7 (495) 123-45-67</p>
+                    <p class="mb-1">✉️ info@fc-viktoria.ru</p>
+                    <p class="mb-0">🏟️ Москва, ул. Спортивная, 1</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Мы в соцсетях</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-outline-light btn-sm">RuTube</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Telegram</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">VK</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Официальный сайт ФК "Виктория" © 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="btn btn-success rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">↑</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Карточки состава работают в обычном режиме.
+$('#back-to-top').click(function(e) { e.preventDefault(); $('html, body').animate({ scrollTop: 0 }, 500); });
+
+            $('#player-search').on('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                document.querySelectorAll('.player-card').forEach(player => {
+                    const playerName = player.querySelector('.card-title').textContent.toLowerCase();
+                    player.parentElement.style.display = playerName.includes(searchTerm) ? 'block' : 'none';
+                });
+            });
+
+            $('#position-filter').on('change', function() {
+                const position = this.value;
+                document.querySelectorAll('.row.mb-5').forEach(section => {
+                    if (position === 'all') { section.style.display = 'block'; } 
+                    else {
+                        const players = section.querySelectorAll('.player-card');
+                        let hasVisiblePlayers = false;
+                        players.forEach(player => {
+                            if (player.classList.contains(position)) { player.parentElement.style.display = 'block'; hasVisiblePlayers = true; } 
+                            else { player.parentElement.style.display = 'none'; }
+                        });
+                        section.style.display = hasVisiblePlayers ? 'block' : 'none';
+                    }
+                });
+            });
+
+            $('#compare-players').click(function() { alert('Функция сравнения игроков будет доступна в следующем обновлении!'); });
+
+            document.querySelectorAll('.player-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.querySelectorAll('.progress-bar').forEach(bar => {
+                        const width = bar.style.width; bar.style.transition = 'none'; bar.style.width = '0%';
+                        setTimeout(() => { bar.style.transition = 'width 0.8s ease'; bar.style.width = width; }, 50);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

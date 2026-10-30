@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Билеты на матчи — ФК «Виктория»</title>
+    
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    
+    <style>
+        .club-header { background: linear-gradient(135deg, #1e5a1e 0%, #2d7a2d 100%); border-bottom: 4px solid #ffd700; }
+        .navbar-custom { background: linear-gradient(135deg, #2d7a2d 0%, #1e5a1e 100%); }
+        .ticket-card { transition: transform 0.3s ease; border-left: 4px solid #28a745; }
+        .ticket-card:hover { transform: translateY(-3px); }
+        .stadium-map { background: #f8f9fa; border-radius: 10px; padding: 20px; }
+        .sector { border: 2px solid #ddd; border-radius: 5px; padding: 10px; margin: 5px; cursor: pointer; transition: all 0.3s ease; }
+        .sector:hover { background-color: #e9ecef; }
+        .sector.selected { background-color: #28a745; color: white; border-color: #28a745; }
+        .price-badge { font-size: 1.2em; font-weight: bold; }
+        /* Принудительный белый фон для полей */
+        .form-control { background-color: #ffffff !important; color: #000000 !important; }
+    </style>
+    <meta name="description" content="Информация о билетах, секторах и посещении домашних матчей футбольного клуба «Виктория».">
+    <meta name="keywords" content="ФК Виктория, футбол, футбольный клуб, новости, матчи, состав, болельщики">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nikazippo71-sudo.github.io/tickets.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ФК «Виктория»">
+    <meta property="og:title" content="Билеты на матчи — ФК «Виктория»">
+    <meta property="og:description" content="Информация о билетах, секторах и посещении домашних матчей футбольного клуба «Виктория».">
+    <meta property="og:url" content="https://nikazippo71-sudo.github.io/tickets.html">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: linear-gradient(135deg, #0a2e0a 0%, #1e5a1e 50%, #2d7a2d 100%); min-height: 100vh;">
+    <!-- ШАПКА -->
+    <header class="club-header text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-left">
+                    <a href="index.html" aria-label="ФК Виктория — главная"><img class="club-logo" src="img/fc-viktoria-logo.png" alt="Логотип ФК Виктория"></a>
+                </div>
+                <div class="col-md-9 text-center text-md-left">
+                    <div class="display-4 font-weight-bold mb-0">ФК "ВИКТОРИЯ"</div>
+                    <p class="lead mb-0">Официальный сайт футбольного клуба</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Состав</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matches.html">Матчи</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Отзывы</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="tickets.html">Билеты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="login-nav-link">Личный кабинет</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main id="main-content" class="container my-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="jumbotron bg-light">
+                    <h1 class="display-4 text-success">🎫 Покупка билетов</h1><p class="small text-muted">Обновлено 30 октября 2026 · Демонстрационное расписание проекта; перед реальным посещением уточняйте у организатора.</p>
+                    <p class="lead">Приобретите билеты на матчи нашей команды и поддержите нас на стадионе!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4 text-white">⚽ Ближайшие матчи</h2>
+                
+                <!-- МАТЧ 1 -->
+                <div class="card ticket-card mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4 class="mb-0">Виктория vs Динамо</h4>
+                            <p class="mb-0">Чемпионат России • 1 ноября 2026 • 16:00</p>
+                        </div>
+                        <span class="badge badge-warning badge-lg">Скоро</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5>Стадион «Виктория Арена»</h5>
+                                <p>🏟️ Москва, ул. Спортивная, 1</p>
+                                <p>🚇 Метро "Спортивная" • 🚍 Автобусы 123, 456</p>
+                                <div class="mt-3">
+                                    <h6>Доступные сектора:</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge badge-success">Северная трибуна (800 руб.)</span>
+                                        <span class="badge badge-info">Западная трибуна (1200 руб.)</span>
+                                        <span class="badge badge-warning">Восточная трибуна (1200 руб.)</span>
+                                        <span class="badge badge-danger">VIP сектор (3500 руб.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="bg-light rounded p-3">
+                                    <h5 class="text-success">От 800 руб.</h5>
+                                    <button class="btn btn-success btn-lg mt-2" data-match="victoria-dynamo">Выбрать места</button>
+                                    <div class="mt-2"><small class="text-muted">📍 245 мест доступно</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- МАТЧ 2 -->
+                <div class="card ticket-card mb-4">
+                    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4 class="mb-0">Виктория vs Зенит</h4>
+                            <p class="mb-0">Кубок России • 15 ноября 2026 • 16:00</p>
+                        </div>
+                        <span class="badge badge-info badge-lg">Доступно</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5>Стадион «Виктория Арена»</h5>
+                                <p>🏟️ Москва, ул. Спортивная, 1</p>
+                                <p>🚇 Метро "Спортивная" • 🚍 Автобусы 123, 456</p>
+                                <div class="mt-3">
+                                    <h6>Доступные сектора:</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge badge-success">Северная трибуна (600 руб.)</span>
+                                        <span class="badge badge-info">Западная трибуна (1000 руб.)</span>
+                                        <span class="badge badge-warning">Восточная трибуна (1000 руб.)</span>
+                                        <span class="badge badge-danger">VIP сектор (3000 руб.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="bg-light rounded p-3">
+                                    <h5 class="text-success">От 600 руб.</h5>
+                                    <button class="btn btn-success btn-lg mt-2" data-match="victoria-zenit">Выбрать места</button>
+                                    <div class="mt-2"><small class="text-muted">📍 512 мест доступно</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- КАРТА СТАДИОНА -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">🗺️ Карта стадиона</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="stadium-map text-center">
+                            <h5 class="mb-4">Схема расположения секторов</h5>
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="bg-warning p-3 rounded mb-3">
+                                        <strong>VIP Сектор</strong><br><small>3500 руб.</small>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6"><div class="bg-info p-3 rounded text-white mb-2"><strong>Западная трибуна</strong><br><small>1200 руб.</small></div></div>
+                                        <div class="col-md-6"><div class="bg-info p-3 rounded text-white mb-2"><strong>Восточная трибуна</strong><br><small>1200 руб.</small></div></div>
+                                    </div>
+                                    <div class="bg-success p-3 rounded text-white">
+                                        <strong>Северная трибуна</strong><br><small>800 руб.</small>
+                                    </div>
+                                    <div class="mt-3"><small class="text-muted">⬆️ Направление игры</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ФОРМА ПОКУПКИ БИЛЕТОВ -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">🧾 Оформление заказа</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="ticket-order-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="matchSelect" class="font-weight-bold">Выберите матч *</label>
+                                        <select class="form-control" id="matchSelect" required>
+                                            <option value="">-- Выберите матч --</option>
+                                            <option value="victoria-dynamo">Виктория vs Динамо (01.11.2026)</option>
+                                            <option value="victoria-spartak">Виктория vs Спартак (08.11.2026)</option>
+                                            <option value="victoria-zenit">Виктория vs Зенит (15.11.2026)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="sectorSelect" class="font-weight-bold">Выберите сектор *</label>
+                                        <select class="form-control" id="sectorSelect" required>
+                                            <option value="">-- Выберите сектор --</option>
+                                            <option value="north" data-price="800">Северная трибуна (800 руб.)</option>
+                                            <option value="west" data-price="1200">Западная трибуна (1200 руб.)</option>
+                                            <option value="east" data-price="1200">Восточная трибуна (1200 руб.)</option>
+                                            <option value="vip" data-price="3500">VIP сектор (3500 руб.)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="ticketQuantity" class="font-weight-bold">Количество билетов *</label>
+                                        <input type="number" class="form-control" id="ticketQuantity" min="1" max="10" value="1" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Тип билета *</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ticketType" id="adult" value="adult" checked required>
+                                            <label class="form-check-label" for="adult">Взрослый</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ticketType" id="child" value="child">
+                                            <label class="form-check-label" for="child">Детский (до 14 лет) - скидка 50%</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ticketType" id="pensioner" value="pensioner">
+                                            <label class="form-check-label" for="pensioner">Пенсионер - скидка 30%</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-light rounded p-3 mt-4">
+                                        <h5>Итоговая стоимость:</h5>
+                                        <div class="d-flex justify-content-between"><span>Количество:</span><span id="quantity-display">1</span></div>
+                                        <div class="d-flex justify-content-between"><span>Цена за билет:</span><span id="price-per-ticket">0 руб.</span></div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between font-weight-bold"><span>Общая стоимость:</span><span id="total-price">0 руб.</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="agreeRules" required>
+                                <label class="form-check-label" for="agreeRules">Я согласен с правилами посещения стадиона</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success btn-lg btn-block">🎫 Перейти к оплате</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ФК "Виктория"</h5>
+                    <p class="mb-1">Футбол объединяет.</p>
+                    <p class="mb-0">Основан в 1995 году</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <p class="mb-1">📞 +7 (495) 123-45-67</p>
+                    <p class="mb-1">✉️ info@fc-viktoria.ru</p>
+                    <p class="mb-0">🏟️ Москва, ул. Спортивная, 1</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Мы в соцсетях</h5>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-outline-light btn-sm">RuTube</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">Telegram</a>
+                        <a href="#" class="btn btn-outline-light btn-sm">VK</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Официальный сайт ФК "Виктория" © 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="btn btn-success rounded-circle" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">↑</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function calculateTotalPrice() {
+            const sectorSelect = document.getElementById('sectorSelect');
+            const quantity = parseInt(document.getElementById('ticketQuantity').value);
+            const selectedOption = sectorSelect.options[sectorSelect.selectedIndex];
+            const basePrice = parseInt(selectedOption.getAttribute('data-price')) || 0;
+            
+            const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
+            let discount = 0;
+            
+            if (ticketType === 'child') { discount = 0.5; } else if (ticketType === 'pensioner') { discount = 0.3; }
+            
+            const pricePerTicket = Math.round(basePrice * (1 - discount));
+            const totalPrice = pricePerTicket * quantity;
+            
+            document.getElementById('quantity-display').textContent = quantity;
+            document.getElementById('price-per-ticket').textContent = pricePerTicket + ' руб.';
+            document.getElementById('total-price').textContent = totalPrice + ' руб.';
+            
+            return totalPrice;
+        }
+
+        document.getElementById('sectorSelect').addEventListener('change', calculateTotalPrice);
+        document.getElementById('ticketQuantity').addEventListener('input', calculateTotalPrice);
+        document.querySelectorAll('input[name="ticketType"]').forEach(radio => { radio.addEventListener('change', calculateTotalPrice); });
+
+        document.addEventListener('DOMContentLoaded', function() { calculateTotalPrice(); });
+
+        document.getElementById('ticket-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) { alert('Для покупки билетов необходимо войти в систему!'); window.location.href = 'login.html'; return; }
+            
+            const totalPrice = calculateTotalPrice();
+            const matchSelect = document.getElementById('matchSelect');
+            const matchText = matchSelect.options[matchSelect.selectedIndex].text;
+            
+            alert(`Билеты успешно зарезервированы!\n\nМатч: ${matchText}\nСтоимость: ${totalPrice} руб.\n\nВам оформлена скидка в 500 рублей, так как вы является победителем в нашей мини-игре по футболу.`);
+            
+            this.reset();
+            calculateTotalPrice();
+        });
+
+        document.querySelectorAll('button[data-match]').forEach(button => {
+            button.addEventListener('click', function() {
+                const matchId = this.getAttribute('data-match');
+                const matchSelect = document.getElementById('matchSelect');
+                
+                for (let i = 0; i < matchSelect.options.length; i++) {
+                    if (matchSelect.options[i].value === matchId) { matchSelect.selectedIndex = i; break; }
+                }
+                
+                document.getElementById('ticket-order-form').scrollIntoView({ behavior: 'smooth' });
+                calculateTotalPrice();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+            if (isLoggedIn && currentUser) {
+                const loginLink = document.getElementById('login-nav-link');
+                if (loginLink) { loginLink.innerHTML = `👤 ${currentUser.firstName}`; loginLink.href = 'profile.html'; }
+            }
+        });
+    </script>
+</body>
+</html>
